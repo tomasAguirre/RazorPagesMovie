@@ -1,0 +1,29 @@
+﻿@model RazorPagesMovie.Models.Film
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<h1>Editar</h1>
+
+<div>
+	<form asp-action="EditPost" method="post">
+		<label asp-for="Id" class="control-label"></label>
+		<input asp-for="Id" class="form-control" readonly="@(true)"/>
+		<span asp-validation-for="Id" clas="text-danger"></span>
+
+		<label asp-for="Name" class="control-label"></label>
+		<input asp-for="Name" class="form-control"/>
+		<span asp-validation-for="Name" clas="text-danger"></span>
+
+		<label asp-for="commingOut" class="control-label"></label>
+		<input asp-for="commingOut" class="form-control"/>
+		<span asp-validation-for="commingOut" clas="text-danger"></span>
+		
+		<div class="form-group">
+			<input type="submit" value="save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>

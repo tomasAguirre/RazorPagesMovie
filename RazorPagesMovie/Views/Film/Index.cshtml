@@ -1,0 +1,45 @@
+﻿@model List<RazorPagesMovie.Models.Film>
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+<h1>Filmes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Fecha de Salida</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(m => f.Id)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(m => f.Name)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(m => f.commingOut)
+                    </td>
+                    <td>
+                            <a asp-controller="Film" asp-action="Edit" asp-route-id="@f.Id">Edit</a> 
+                            | 
+                                <a asp-controller="Film" asp-action="Delete" asp-route-id="@f.Id">Delete</a> 
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<a asp-controller="Film" asp-action="Create" >Crear nuevo</a> 
