@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace RazorPagesMovie.Controllers
 {
+    //film controler 
     public class FilmController : Controller
     {
         public static List<Film> filmsList;
